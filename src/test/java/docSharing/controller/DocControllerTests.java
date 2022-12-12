@@ -69,11 +69,6 @@ public class DocControllerTests {
         userId = user.getBody().getData().getId();
     }
 
-    //    @Test
-//    void saveLog() {
-//        logService.saveOneLogToDB("khader", userId, 13L);
-//    }
-//
     @Test
     void getDocument_GetContentExistsDoc_Works() throws InterruptedException {
         ResponseEntity<Response<INode>> newFile = fileSystemController.addInode(new AddINodeDTO(userId, rootId, "khaderFile8", INodeType.FILE), token, userId);

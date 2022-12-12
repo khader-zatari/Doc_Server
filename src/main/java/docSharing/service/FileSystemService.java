@@ -22,11 +22,7 @@ public class FileSystemService {
     @Autowired
     private FileSystemRepository fsRepository;
 
-    @Autowired
-    private UserService userService;
 
-    @Autowired
-    private DocService docService;
 
     private static Logger logger = LogManager.getLogger(FileSystemService.class.getName());
 
@@ -71,7 +67,7 @@ public class FileSystemService {
         if (!isDir(parentInode)) {
             throw new IllegalArgumentException("Destination to add must be a directory");
         }
-//        User owner = userService.getById(addInode.userId);
+
         INode newInode;
         switch (addInode.type) {
             case DIR:
@@ -85,10 +81,6 @@ public class FileSystemService {
         }
 
         INode savedInode = fsRepository.save(newInode);
-//        if (addInode.type == INodeType.FILE) {
-//            Long docId = savedInode.getId();
-//            docService.setPermission(addInode.userId, docId, UserRole.EDITOR);
-//        }
 
         return savedInode;
     }

@@ -2,6 +2,7 @@ package docSharing.controller;
 
 import docSharing.DTO.FS.AddINodeDTO;
 import docSharing.DTO.FS.INodeDTO;
+import docSharing.DTO.FS.MoveINodeDTO;
 import docSharing.DTO.User.UserDTO;
 import docSharing.entities.INode;
 import docSharing.entities.INodeType;
@@ -114,11 +115,6 @@ public class FileSystemControllerTests {
         });
     }
 
-//    @Test
-//    void uploadFile_ProvideRightParam_Works() {
-//        Long rootId = 1L;
-////        fileSystemController.uploadFile(new FileWithData(rootId, userId, new)).getBody()
-//    }
 
     @Test
     void uploadFile_ProvideWrongParam_Exception() {
